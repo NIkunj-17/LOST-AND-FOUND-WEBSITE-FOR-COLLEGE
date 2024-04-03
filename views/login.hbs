@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | IIIT Raichur Lost & Found</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #9e39e5;
+            font-size: 18px;
+            /* Set the base font size for 100% zoom */
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-container {
+            font-family: "kodo mono", monospace;
+            background-color: white;
+            color: black;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 60px;
+            /* Increased navbar height */
+            box-sizing: border-box;
+            margin-top: 40px;
+            margin-right: 40px;
+            margin-left: 40px;
+            border-radius: 50px;
+            /* Made it more round */
+            font-size: 1.2rem;
+            /* Relative font size */
+            overflow: hidden;
+            /* Prevents content overflow */
+        }
+
+        nav ul {
+            justify-content: flex-start;
+            align-items: center;
+            display: flex;
+            overflow: hidden;
+            /* Prevents content overflow */
+        }
+
+        nav ul img {
+            padding-left: 20px;
+            height: 50px;
+            /* Adjusted image height */
+        }
+        nav ul span{
+            text-align: center;
+            margin-left: 100px;
+            font-size: xx-large;
+            font-weight: 800;
+        }
+
+        nav li {
+            margin: 0 15px;
+            /* Adjusted margin for larger screens */
+            cursor: pointer;
+        }
+
+        .link:hover {
+            background-color: #eee5e5;
+            border-radius: 15px;
+            /* Made it more round */
+        }
+
+        /* Media Queries for Responsive Design */
+        @media screen and (max-width: 600px) {
+            .nav-container {
+                flex-direction: column;
+                /* Stack items vertically */
+                align-items: center;
+                height: 80px;
+                /* Adjusted navbar height for smaller screens */
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav li {
+                margin: 10px 0;
+            }
+            
+
+            .link {
+                padding: 10px 15px;
+                /* Adjusted padding for smaller screens */
+            }
+        }
+
+        .content-container {
+            display: flex;
+            height: 100vh;
+            border-radius: 10px;
+            /* Made border rounded */
+            background-color: #9e39e5;
+            /* Same as website background color */
+            padding: 20px;
+            /* Add padding to the content container */
+        }
+
+        .card {
+            border: none;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            /* Remove background color from the card */
+            height: 75vh;
+            margin-top: 5%;
+        }
+.left-card {
+    width: 50%;
+    box-sizing: border-box;
+    margin-right: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    padding-top: 50px;
+    background-image: url('iiit-raichur.JPG');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative; /* Ensure the background color layer is positioned relative to the card */
+}
+
+.left-card::after {
+    content: ''; /* Create a pseudo-element for the background color layer */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); 
+    border-radius: 10px; /* Match the card's border-radius */
+}
+
+.left-card h2{
+     color: white;
+    text-align: center;
+    z-index: 2;
+    padding-top: 80px;
+    font-weight: 750;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+.left-card p {
+    color: white;
+    text-align: center;
+    z-index: 1; 
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+}
+
+        .right-card {
+            width: 40%;
+            box-sizing: border-box;
+            margin-left: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            padding-top: 50px;
+            margin-left: 80px;
+        }
+
+        .right-card h1 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: rgba(132, 7, 132, 0.963);
+            text-align: center;
+            font-size: xx-large;
+            font-weight: bolder;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .btn-primary {
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            width: 50%;
+        }
+        .btn-div{
+            padding-left: 170px;
+        }
+
+        .btn-primary:hover {
+            font-size: large;
+        }
+        .register{
+            margin-top: 180px;
+            text-align: center;
+        }
+          .footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <nav>
+                <ul>
+                    <li><img src="iiit-raichur-logo.png" height="50px"></li>
+                    <span>IIIT Raichur Lost & Found: Reclaim What You've Lost</span>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container content-container">
+        <div class="row">
+            <div class="col-md-6 left-card card">
+                    <h2>Welcome to IIIT Raichur Lost & Found</h2>
+                <p>Never lose your belongings again! Our platform helps you find your lost items and return found items to their rightful owners.</p>
+                {{!-- <ul>
+                    <li>Search for lost items reported by others</li>
+                    <li>Report items you have found</li>
+                    <li>Connect with others to retrieve lost items</li>
+                </ul> --}}
+            </div>
+            <div class="col-md-6 right-card card">
+                <h1>Proceed to Login!</h1>
+                <form action="/login" method="POST">
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                    </div>
+                    <div class="btn-div">
+                    <button type="submit" class="btn btn-primary" onclick="windowlogin()">Login</button>
+                    </div>
+                </form>
+                <div class="register">
+                   <p>New Here? <a href="/register">Go to Register</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+         <footer class="footer">
+    <div class="container">
+        <span>© 2024 IIIT Raichur Lost & Found</span>
+    </div>
+</footer>
+  
+    <script>
+        function windowlogin(){
+            alert("Successfully Logged IN");
+        }
+    </script>
+</body>
+</html>
